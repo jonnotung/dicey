@@ -16,11 +16,9 @@ app.diceRollSim = () => {
 app.countSuccesses = (success) => {
     
     app.rolls.successes = app.rolls.dice.reduce( (acc, current) => {
-        if(current.roll >= success || current.success) {
-            current.success = true
+        if(current.success) {
             return acc + 1
         } 
-        current.success = false
         return acc
     }, 0)
     
@@ -88,9 +86,9 @@ app.rerollClick = (index) => {
     }
 
     
-    // app.countSuccesses(rerollSuccess)
-    // app.showSuccessCount() 
-    // app.showResults()
+    app.countSuccesses(rerollSuccess)
+    app.showSuccessCount() 
+   
 }
 
 app.rollManyDice = (numOfDice) => {
@@ -100,7 +98,7 @@ app.rollManyDice = (numOfDice) => {
             const roll = app.diceRollSim()
             app.rolls.dice.push({
                 roll: roll,
-                success: null,
+                success: app.ifSuccess(roll, app.rolls.success),
              })
         }
         app.countSuccesses(app.rolls.success)
@@ -169,9 +167,11 @@ app.reroll = (event) => {
     app.rolls.rerollSuccess = rerollSuccess
     const rerolledDice = app.rolls.dice.map((die) => {
         if (!die.success) {
+            const newRoll = app.diceRollSim()
+
             return {
-                roll: app.diceRollSim(),
-                success: false
+                roll: newRoll,
+                success: app.ifSuccess(newRoll, rerollSuccess)
             }
         }
         return die
