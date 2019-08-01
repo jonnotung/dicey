@@ -1,0 +1,13 @@
+Idea: dice (d6's) rolling app
+
+MVP User selects: how many dice to roll (max 30), what needs to be rolled to be a success (eg 2 or higher, 3 or higher etc.)
+    User hits 'Roll them dice' button
+    App simulates dice rolls, and shows a count of how many dice were successes
+    Also has an area that shows a graphic of each dice rolled (a bunch of dice)
+    User can then repeat, changing number of dice and what's needed for a successfull roll 
+
+Stretch goals:
+    Add option for user to reroll failures from a set of rolls
+        Add option to narrow down what is rerolled (eg. only reroll rolls of 1)
+    Option to sum dice, instead of # of successes
+    Option to reroll specific dice by clicking on them

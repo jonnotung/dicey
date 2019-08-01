@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Ye Old Dice Rolling App</title>
+</head>
+<body>
+    <div class="outerWrapper">
+        <div class="innerWrapper">
+            <h1>Ye Olde Dice App</h1>
+            <form action="">
+                <label for="numOfDice">Number of dice to roll</label>
+                <input type="text" class="numOfDice" name="numOfDice" id="numOfDice">
+                <label for="successfulRoll">Minimum roll to be success</label>
+                <select name="successfulRoll" id="successfulRoll">
+                    <!-- <option value="1">1</option> -->
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+                <button id="rollDiceButton">Roll dice</button>
+            </form>
+            <div class="successes" aria-live="polite"></div>
+            <div class="diceArea" aria-live="polite"></div>
+            <div class="rerollSection">
+                <div class="reroll" id="reroll"></div>
+                <div class="rerollOption" id="rerollOption"></div>
+            </div>
+
+        </div>
+    </div>
+    
+
+    <script src="./scripts/init.js"></script>
+</body>
+</html>
