@@ -184,7 +184,7 @@ app.reroll = (event) => {
 
 // document ready
 (function(){
-    
+    console.log(diceRollSim())
     document.getElementById("rollDiceButton").addEventListener("click", app.rollDiceButtonClick)
     document.getElementById("reroll").addEventListener("click", app.reroll)
 })()    
