@@ -44,6 +44,7 @@ app.showResults = () => {
     
     app.showSuccessCount()
     const diceGrid = document.getElementsByClassName("dice")
+
     for (let i = 0; i<60; i++) {
         diceGrid[i].classList.add("empty")
         diceGrid[i].innerText = ""
@@ -53,6 +54,8 @@ app.showResults = () => {
         const currentDiceSquare = diceGrid[i]
         currentDiceSquare.innerText = `${die.roll}`
         currentDiceSquare.classList.remove("empty")
+        currentDiceSquare.classList.remove("successRoll")
+        currentDiceSquare.classList.remove("failRoll")
         if(die.success) {
             currentDiceSquare.classList.add("successRoll")
         } else {
@@ -177,20 +180,28 @@ app.reroll = (event) => {
     })
     app.rolls.dice = rerolledDice
     app.countSuccesses(rerollSuccess)
-    app.showResults(app.rolls.rerollSuccess)
+    app.showResults()
 }
 
 
 app.initDiceGrid = () => {
     const dice = document.getElementsByClassName("diceArea")[0]
     for(let i = 0; i<60; i++) {
+        const diceWrap = document.createElement("li")
+        diceWrap.classList.add("diceWrap")
         const showRoll = document.createElement("p")
         // showRoll.innerText = "hi"
         showRoll.classList.add("dice")
         showRoll.classList.add("empty")
         
-        showRoll.addEventListener("click", () => app.rerollClick(i))
-        dice.appendChild(showRoll)
+        for(let i = 0; i<4 ; i++) {
+            const corner = document.createElement("div")
+            corner.classList.add("cornerLight")
+            diceWrap.appendChild(corner)
+        }
+        diceWrap.appendChild(showRoll)
+        diceWrap.addEventListener("click", () => app.rerollClick(i))
+        dice.appendChild(diceWrap)
     }
 }
 
