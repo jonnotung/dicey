@@ -43,20 +43,22 @@ app.showSuccessCount = () => {
 app.showResults = () => {
     
     app.showSuccessCount()
-
-    const dice = document.getElementsByClassName("diceArea")[0]
-    dice.innerHTML = ""
+    const diceGrid = document.getElementsByClassName("dice")
+    for (let i = 0; i<60; i++) {
+        diceGrid[i].classList.add("empty")
+        diceGrid[i].innerText = ""
+    }
+    
     app.rolls.dice.forEach((die, i)=>{
-        const showRoll = document.createElement("p")
-        showRoll.innerText = `${die.roll}`
-        showRoll.classList.add("dice")
+        const currentDiceSquare = diceGrid[i]
+        currentDiceSquare.innerText = `${die.roll}`
+        currentDiceSquare.classList.remove("empty")
         if(die.success) {
-            showRoll.classList.add("successRoll")
+            currentDiceSquare.classList.add("successRoll")
         } else {
-            showRoll.classList.add("failRoll")
+            currentDiceSquare.classList.add("failRoll")
         }
-        showRoll.addEventListener("click", () => app.rerollClick(i))
-        dice.appendChild(showRoll)
+        
     })
 }
 
@@ -64,15 +66,12 @@ app.rerollClick = (index) => {
     const rerollSuccess = document.getElementById("rerollSuccess").value
     const newRoll = app.diceRollSim()
     const isSuccess = app.ifSuccess(newRoll, rerollSuccess)
-
-    console.log({newRoll, rerollSuccess, isSuccess})
     
 
     app.rolls.dice[index] = {
         roll: newRoll,
         success: isSuccess
     }
-    console.log(app.rolls.dice)
 
     const clickedDice = document.getElementsByClassName("dice")[index]
     clickedDice.innerText = newRoll
@@ -182,9 +181,25 @@ app.reroll = (event) => {
 }
 
 
+app.initDiceGrid = () => {
+    const dice = document.getElementsByClassName("diceArea")[0]
+    for(let i = 0; i<60; i++) {
+        const showRoll = document.createElement("p")
+        // showRoll.innerText = "hi"
+        showRoll.classList.add("dice")
+        showRoll.classList.add("empty")
+        
+        showRoll.addEventListener("click", () => app.rerollClick(i))
+        dice.appendChild(showRoll)
+    }
+}
+
 // document ready
 (function(){
-    console.log(diceRollSim())
+    
     document.getElementById("rollDiceButton").addEventListener("click", app.rollDiceButtonClick)
     document.getElementById("reroll").addEventListener("click", app.reroll)
+    app.initDiceGrid()
+    
+
 })()    
