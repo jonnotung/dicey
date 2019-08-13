@@ -10,14 +10,16 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 /* typography */
 body {
     font-family: 'Press Start 2P', cursive;
-    height: 100vh;
-    background: linear-gradient(to bottom, #4160f8, #4160f8 7%, #60cfe1 7%, #60cfe1 8%, #4160f8 8%, #4160f8 10%, #60cfe1 10%,
+    height: 90vh;
+    background-color: #4160f8;
+    overflow-x: hidden;
+    /* background: linear-gradient(to bottom, #4160f8, #4160f8 7%, #60cfe1 7%, #60cfe1 8%, #4160f8 8%, #4160f8 10%, #60cfe1 10%,
     #60cfe1 11%, #4160f8 11%, #4160f8 13%, #60cfe1 13%, #60cfe1 18%, #4160f8 18%, #4160f8 20%, #60cfe1 20%, #60cfe1 21%,  #4160f8 21%,
     #4160f8 23%, #60cfe1 23%, #60cfe1 24%, #4160f8 24%, #4160f8 37%, #60cfe1 37%, #60cfe1 38%, #4160f8 38%, #4160f8 40%, #60cfe1 40%,
     #60cfe1 41%, #4160f8 41%, #4160f8 43%, #60cfe1 43%, #60cfe1 48%, #4160f8 48%, #4630f8 50%, #60cfe1 50%, #60cfe1 51%,  #4160f8 51%,
     #4160f8 53%, #60cfe1 53%, #60cfe1 54%, #4160f8 54%, #4160f8 67%, #60cfe1 67%, #60cfe1 68%, #4160f8 68%, #4160f8 70%, #60cfe1 70%,
     #60cfe1 71%, #4160f8 71%, #4160f8 73%, #60cfe1 73%, #60cfe1 78%, #4160f8 78%, #4630f8 80%, #60cfe1 80%, #60cfe1 81%,  #4160f8 81%,
-    #4160f8 83%, #60cfe1 83%, #60cfe1 84%, #4160f8 84%);
+    #4160f8 83%, #60cfe1 83%, #60cfe1 84%, #4160f8 84%); */
 }
 
 /* strip default styles */
@@ -26,7 +28,7 @@ h1, p, ul {
     padding: 0;
 }
 
-ul {
+ul, li {
     list-style: none;
 }
 
@@ -43,6 +45,7 @@ ul {
 
 /* header styles */
 header {
+    z-index: 10;
     position: relative;
     width: 100%;
     margin-top: 2vh;
@@ -59,12 +62,29 @@ h1 {
     margin-bottom: 5px;
 }
 
+.headerWrapper {
+    position: relative;
+}
+
+.backgroundBar {
+    position: absolute;
+    z-index: -20;
+    top:0;
+    left: -100%;
+    
+    width: 500vw;
+    height: 100%;
+    background: linear-gradient(to bottom,   #4160f8 5%, #60cfe1 5%, #60cfe1 6%, #4160f8 6%, #4160f8 15%, #60cfe1 15%, #60cfe1 19%, #4160f8 19%, #4160f8 30%, #60cfe1 30%, #60cfe1 70%,
+    #4160f8 70%, #4160f8 81%, #60cfe1 81%, #60cfe1 85%, #4160f8 85%, #4160f8 94%, #60cfe1 94%, #60cfe1 95%, #4160f8 95%)
+}
+
 /* border lights */
 .cornerLight {
     position: absolute;
     width: 10px;
     height: 10px;
-    background-color: black;
+    background: radial-gradient(at 30% 30%, white 1px, black 1px )
+   
 }
 
 header .cornerLight {
@@ -112,13 +132,16 @@ header .cornerLight {
     display: grid;
     /* number of columns is equal to the length of the grid array, divided equally */
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(6, 1fr);    
+    /* grid-template-rows: minmax(100px, auto);     */
+    
 }
 
 .diceWrap {
     position: relative;
     display: block;
-    margin: 14px;
+    height: 5.5vw;
+    max-height: 70px;
+    margin: 13px;
     background-color: black;
     color: white;
 
@@ -129,6 +152,7 @@ header .cornerLight {
 
 .diceArea p {
     height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -142,6 +166,17 @@ header .cornerLight {
     background-color: red;
 }
 
+/* footer styles */
 .rerollSection {
-    display: flex;
+    z-index: 10;
+    position: relative;
+    width: 100%;
+    margin-top: 2vh;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    
+    border: 2px solid #6bcbd6;
+    outline: 2px solid white;
+    box-shadow: 0 0 0 4px #6bcbd6, 0 0 0 6px black, 0 0 0 8px white, 0 0 0 10px black ;
 }

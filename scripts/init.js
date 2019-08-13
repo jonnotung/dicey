@@ -105,7 +105,7 @@ app.rollManyDice = (numOfDice) => {
         }
         app.countSuccesses(app.rolls.success)
         app.showResults(app.rolls.success)
-        app.showRerollOptions()
+        // app.showRerollOptions()
     }
 
 }
@@ -147,20 +147,20 @@ app.createOptionsElements = (max) => {
 
 
 
-app.showRerollOptions = () => {
-    document.getElementById("reroll").innerHTML = ""
-    const rerollForm = document.createElement("form")
+// app.showRerollOptions = () => {
+//     document.getElementById("reroll").innerHTML = ""
+//     const rerollForm = document.createElement("form")
 
-    const rerollButton = document.createElement("button")
-    rerollButton.innerHTML = "Reroll failed rolls"
-    rerollForm.appendChild(rerollButton)
+//     const rerollButton = document.createElement("button")
+//     rerollButton.innerHTML = "Reroll failed rolls"
+//     rerollForm.appendChild(rerollButton)
 
-    document.getElementById('rerollOption').innerHTML = ""
-    app.createOptionsElements(6)
+//     document.getElementById('rerollOption').innerHTML = ""
+//     app.createOptionsElements(6)
 
-    document.getElementById("reroll").appendChild(rerollForm)
+//     document.getElementById("reroll").appendChild(rerollForm)
     
-}
+// }
 
 app.reroll = (event) => {
     event.preventDefault()
