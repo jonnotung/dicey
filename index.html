@@ -13,54 +13,59 @@
 <body>
     <div class="outerWrapper">
         <div class="innerWrapper">
-            <div class=headerWrapper>
+            <div class="headerWrapper">
                 <div class="backgroundBar"></div>
-                <header>
-                    <!-- <div class="cornerLight"></div>
-                    <div class="cornerLight"></div>
-                    <div class="cornerLight"></div>
-                    <div class="cornerLight"></div> -->
-                    <h1>Ye Olde Dice App</h1>
-                    <form action="">
-                        <div>
-                            <label for="numOfDice">Number of dice to roll</label>
-                            <input type="text" class="numOfDice" name="numOfDice" id="numOfDice">
-                        </div>
-                        <div>
-                            <label for="successfulRoll">Minimum roll to be success</label>
-                            <select name="successfulRoll" id="successfulRoll">
-                                <!-- <option value="1">1</option> -->
+                    <header>
+                        <!-- <div class="cornerLight"></div>
+                        <div class="cornerLight"></div>
+                        <div class="cornerLight"></div>
+                        <div class="cornerLight"></div> -->
+                        <h1>Ye Olde Dice App</h1>
+                        <form action="">
+                            <div>
+                                <label for="numOfDice">Number of dice to roll</label>
+                                <input type="text" class="numOfDice" name="numOfDice" id="numOfDice">
+                            </div>
+                            <div>
+                                <label for="successfulRoll">Minimum roll to be success</label>
+                                <select name="successfulRoll" id="successfulRoll">
+                                    <!-- <option value="1">1</option> -->
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                            <button id="rollDiceButton">Roll dice</button>
+                        </form>
+                        <div class="successes" aria-live="polite"></div>
+                    </header>
+                </div>
+            
+            <ul class="diceArea" aria-live="polite">
+                
+            </ul>
+            <div class="footerWrapper">
+                <div class="backgroundBar"></div>
+                
+                <footer class="rerollSection">
+                    <div class="rerollOption" id="rerollOption">
+                        <label for="rerollSuccess">Minimum reroll to be a success: </label>
+                        <select class="rerollSuccess" name="rerollSuccess" id="rerollSuccess">
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                                 <option value="6">6</option>
-                            </select>
-                        </div>
-                        <button id="rollDiceButton">Roll dice</button>
-                    </form>
-                    <div class="successes" aria-live="polite"></div>
-                </header>
+                        </select>
+                    </div>
+                    <div class="reroll" id="reroll">
+                        <button>Reroll all failed rolls</button>
+                    </div>
+                </footer>
             </div>
             
-            <ul class="diceArea" aria-live="polite">
-                
-            </ul>
-            <footer class="rerollSection">
-                <div class="rerollOption" id="rerollOption">
-                    <label for="rerollSuccess">Minimum reroll to be a success: </label>
-                    <select class="rerollSuccess" name="rerollSuccess" id="rerollSuccess">
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                    </select>
-                </div>
-                <div class="reroll" id="reroll">
-                    <button>Reroll all failed rolls</button>
-                </div>
-            </footer>
 
         </div>
     </div>

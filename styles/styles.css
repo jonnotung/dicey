@@ -52,10 +52,16 @@ header {
     padding: 20px;
     background-color: black;
     color: white;
-    
+    text-align: center;
     border: 2px solid #6bcbd6;
     outline: 2px solid white;
     box-shadow: 0 0 0 4px #6bcbd6, 0 0 0 6px black, 0 0 0 8px white, 0 0 0 10px black ;
+}
+
+input[type=text] {
+    display: block;
+    width:50%;
+    margin: 5px auto 15px auto;
 }
 
 button {
@@ -147,7 +153,7 @@ header .cornerLight {
     position: relative;
     display: block;
     /* width: 50px; */
-    height: 50px;
+    height: 3vw;
     /* max-height: 50px; */
     margin: 13px;
     background-color: black;
@@ -175,7 +181,11 @@ header .cornerLight {
 }
 
 /* footer styles */
-.rerollSection {
+.footerWrapper {
+    position: relative;
+}
+
+footer {
     z-index: 10;
     position: relative;
     width: 100%;
@@ -184,8 +194,45 @@ header .cornerLight {
     padding: 20px;
     background-color: black;
     color: white;
-    
+    text-align: center;
     border: 2px solid #6bcbd6;
     outline: 2px solid white;
     box-shadow: 0 0 0 4px #6bcbd6, 0 0 0 6px black, 0 0 0 8px white, 0 0 0 10px black ;
+}
+
+@media (max-width: 950px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .diceArea {
+        
+        /* number of columns is equal to the length of the grid array, divided equally */
+        grid-template-columns: repeat(6, 1fr);
+        /* grid-template-rows: minmax(100px, auto);     */
+    }
+
+    .diceWrap {
+        
+        height: calc(60vw / 6);
+        /* max-height: 50px; */
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.15rem;
+    }
+
+    .diceArea {
+        /* number of columns is equal to the length of the grid array, divided equally */
+        grid-template-columns: repeat(4, 1fr);
+        /* grid-template-rows: minmax(100px, auto);     */
+    }
+
+    .diceWrap {
+        
+        height: calc(60vw / 4);
+        /* max-height: 50px; */
+    }
 }
