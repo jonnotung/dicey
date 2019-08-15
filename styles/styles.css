@@ -13,6 +13,7 @@ body {
     /* height: 85vh; */
     background-color: #4160f8;
     overflow-x: hidden;
+    max-width: 100vw;
     /* background: linear-gradient(to bottom, #4160f8, #4160f8 7%, #60cfe1 7%, #60cfe1 8%, #4160f8 8%, #4160f8 10%, #60cfe1 10%,
     #60cfe1 11%, #4160f8 11%, #4160f8 13%, #60cfe1 13%, #60cfe1 18%, #4160f8 18%, #4160f8 20%, #60cfe1 20%, #60cfe1 21%,  #4160f8 21%,
     #4160f8 23%, #60cfe1 23%, #60cfe1 24%, #4160f8 24%, #4160f8 37%, #60cfe1 37%, #60cfe1 38%, #4160f8 38%, #4160f8 40%, #60cfe1 40%,
@@ -85,7 +86,7 @@ h1 {
     top:0;
     left: -100%;
     
-    width: 500vw;
+    width: 400vw;
     height: 100%;
     background: linear-gradient(to bottom,   #4160f8 5%, #60cfe1 5%, #60cfe1 6%, #4160f8 6%, #4160f8 15%, #60cfe1 15%, #60cfe1 19%, #4160f8 19%, #4160f8 30%, #60cfe1 30%, #60cfe1 70%,
     #4160f8 70%, #4160f8 81%, #60cfe1 81%, #60cfe1 85%, #4160f8 85%, #4160f8 94%, #60cfe1 94%, #60cfe1 95%, #4160f8 95%)
@@ -97,35 +98,31 @@ h1 {
     width: 10px;
     height: 10px;
     background: radial-gradient(at 30% 30%, white 1px, black 1px )
-   
 }
 
-header .cornerLight {
-    background-color: white;
-}
 
-.cornerLight:nth-child(1) {
+.cornerLight:nth-child(2) {
     top:-10px;
     right: -10px;
     border-bottom: 2px solid black;
     border-left: 2px solid black;
 }
 
-.cornerLight:nth-child(2) {
+.cornerLight:nth-child(3) {
     top:-10px;
     left: -10px;
     border-bottom: 2px solid black;
     border-right: 2px solid black;
 }
 
-.cornerLight:nth-child(3) {
+.cornerLight:nth-child(4) {
     bottom:-10px;
     right: -10px;
     border-top: 2px solid black;
     border-left: 2px solid black;
 }
 
-.cornerLight:nth-child(4) {
+.cornerLight:nth-child(5) {
     bottom:-10px;
     left: -10px;
     border-top: 2px solid black;
@@ -163,6 +160,16 @@ header .cornerLight {
     outline: 2px solid white;
     box-shadow: 0 0 0 4px #6bcbd6, 0 0 0 6px black, 0 0 0 8px white, 0 0 0 10px black ;
 }
+
+.dice:hover ~ .cornerLight  {
+    animation: flash 0.5s infinite;
+}
+
+@keyframes flash {
+    50%{background: lemonchiffon};
+    100%{background: black};
+}
+
 
 .diceArea p {
     height: 100%;
@@ -238,6 +245,11 @@ footer {
 @media (max-width: 600px) {
     h1 {
         font-size: 1.15rem;
+    }
+
+    .backgroundBar {   
+        width: 100vw;
+        left: -13%;
     }
 
     .diceArea {

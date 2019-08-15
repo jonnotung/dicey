@@ -195,13 +195,13 @@ app.initDiceGrid = () => {
         // showRoll.innerText = "hi"
         showRoll.classList.add("dice")
         showRoll.classList.add("empty")
-        
+        diceWrap.appendChild(showRoll)
         for(let i = 0; i<4 ; i++) {
             const corner = document.createElement("div")
             corner.classList.add("cornerLight")
             diceWrap.appendChild(corner)
         }
-        diceWrap.appendChild(showRoll)
+        
         diceWrap.addEventListener("click", () => app.rerollClick(i))
         dice.appendChild(diceWrap)
     }
