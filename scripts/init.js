@@ -47,6 +47,8 @@ app.showResults = () => {
 
     for (let i = 0; i<60; i++) {
         diceGrid[i].classList.add("empty")
+        diceGrid[i].classList.remove("successRoll")
+        diceGrid[i].classList.remove("failRoll")
         diceGrid[i].innerText = ""
     }
     

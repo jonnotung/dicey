@@ -10,7 +10,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 /* typography */
 body {
     font-family: 'Press Start 2P', cursive;
-    height: 90vh;
+    /* height: 85vh; */
     background-color: #4160f8;
     overflow-x: hidden;
     /* background: linear-gradient(to bottom, #4160f8, #4160f8 7%, #60cfe1 7%, #60cfe1 8%, #4160f8 8%, #4160f8 10%, #60cfe1 10%,
@@ -56,6 +56,13 @@ header {
     border: 2px solid #6bcbd6;
     outline: 2px solid white;
     box-shadow: 0 0 0 4px #6bcbd6, 0 0 0 6px black, 0 0 0 8px white, 0 0 0 10px black ;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 15px auto 0 auto;
+    display: block;
+    text-transform: uppercase;
 }
 
 h1 {
@@ -128,7 +135,7 @@ header .cornerLight {
 .diceArea {
     margin-top: 2vh;
     width: 100%;
-    height: 60vh;
+    min-height: 60vh;
     display: grid;
     /* number of columns is equal to the length of the grid array, divided equally */
     grid-template-columns: repeat(10, 1fr);
@@ -139,8 +146,9 @@ header .cornerLight {
 .diceWrap {
     position: relative;
     display: block;
-    height: 5.5vw;
-    max-height: 70px;
+    /* width: 50px; */
+    height: 50px;
+    /* max-height: 50px; */
     margin: 13px;
     background-color: black;
     color: white;
@@ -171,7 +179,8 @@ header .cornerLight {
     z-index: 10;
     position: relative;
     width: 100%;
-    margin-top: 2vh;
+   
+    margin: 2vh 0;
     padding: 20px;
     background-color: black;
     color: white;
