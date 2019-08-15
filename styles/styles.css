@@ -223,6 +223,10 @@ footer {
     box-shadow: 0 0 0 4px #6bcbd6, 0 0 0 6px black, 0 0 0 8px white, 0 0 0 10px black ;
 }
 
+.rerollOption {
+    margin-bottom: 20px;
+}
+
 @media (max-width: 950px) {
     h1 {
         font-size: 1.5rem;

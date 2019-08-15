@@ -46,14 +46,21 @@ app.showResults = () => {
     const diceGrid = document.getElementsByClassName("dice")
 
     for (let i = 0; i<60; i++) {
-        diceGrid[i].classList.add("empty")
-        diceGrid[i].classList.remove("successRoll")
-        diceGrid[i].classList.remove("failRoll")
-        diceGrid[i].innerText = ""
+        //remove all event listeners by cloning node and replacing, to remove all event listeners
+        const oldEle = diceGrid[i]
+        const newEle = diceGrid[i].cloneNode(true)
+        newEle.classList.add("empty")
+        newEle.innerText = ""
+        newEle.classList.remove("successRoll")
+        newEle.classList.remove("failRoll")
+        
+        oldEle.parentNode.replaceChild(newEle, oldEle)
+        
     }
     
     app.rolls.dice.forEach((die, i)=>{
         const currentDiceSquare = diceGrid[i]
+        currentDiceSquare.addEventListener("click", () => app.rerollClick(i))
         currentDiceSquare.innerText = `${die.roll}`
         currentDiceSquare.classList.remove("empty")
         currentDiceSquare.classList.remove("successRoll")
@@ -202,7 +209,7 @@ app.initDiceGrid = () => {
             diceWrap.appendChild(corner)
         }
         
-        diceWrap.addEventListener("click", () => app.rerollClick(i))
+        
         dice.appendChild(diceWrap)
     }
 }
